@@ -22,8 +22,19 @@ var ball = {
 }
 
 function setup(){
-  var canvas =  createCanvas(700,600);
+  canvas =createCanvas(700,600);
+  canvas.parent('canvase');
+  video = createCapture(VIDEO);
+  video.size(800,400);
+  video.parent('game_consoleee');
+  poseNet = ml5.poseNet(video, modelLoaded);
+
 }
+
+function modelLoaded() {
+  console.log('Model Loaded!');
+}
+
 
 
 function draw(){
