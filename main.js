@@ -23,12 +23,17 @@ rightWristX = 0;
 scoreRightWrist = 0;
 
 game_status = "";
+var status="notstarted";
 
-//var doggo_theme = new Audio("https://saantonandre.github.io/doggo_theme.wav");
+var doggo_theme = new Audio("https://saantonandre.github.io/doggo_theme.wav");
 
  function preload() {
   ball_touch_paddel = loadSound("ball_touch_paddel.wav");
   missed = loadSound("missed.wav");
+}
+function gamesStarted(){
+  status="started";
+  document.getElementById("status").innerHTML="GAME LOADED";
 }
 
 function setup(){
@@ -67,7 +72,8 @@ function startGame()
 
 function draw(){
 
-  background(0); 
+  if(game_status=="start"){
+    background(0); 
   image(video, 0, 0, 700, 600);
 
   fill("black");
@@ -117,6 +123,7 @@ function draw(){
     move();
 
     }
+  }
 
   }
 
