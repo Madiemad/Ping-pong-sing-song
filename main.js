@@ -84,7 +84,7 @@ function draw(){
   stroke("black");
   rect(0,0,20,700);
 
-  if(scoreRightWrist > 0.2)
+  if(scoreRightWrist > 0)
   {
     fill("red");
     stroke("red");
